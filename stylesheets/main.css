@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap");
+/* line 1, ../sass/_mixins.scss */
+header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 99;
+  display: flex;
+  flex: 1;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+/* line 11, ../sass/_mixins.scss */
+header .header-logo, header .header-buttons {
+  display: flex;
+  align-items: center;
+}
+/* line 15, ../sass/_mixins.scss */
+header .header-logo img, header .header-buttons img {
+  margin: .5rem 0 0 1.5rem;
+  width: 5rem;
+}
+/* line 19, ../sass/_mixins.scss */
+header .header-logo div, header .header-buttons div {
+  padding: 0 1rem;
+}
+
+/* line 25, ../sass/_mixins.scss */
+main {
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+  position: relative;
+  top: 5.5rem;
+  height: 80vh;
+}
+/* line 35, ../sass/_mixins.scss */
+main .top {
+  display: flex;
+  flex: 1;
+  flex-flow: row-reverse wrap;
+  justify-content: space-evenly;
+}
+/* line 42, ../sass/_mixins.scss */
+main .first, main .second {
+  display: flex;
+  flex: 1;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+/* line 49, ../sass/_mixins.scss */
+main .top-item img {
+  width: 20rem;
+}
+/* line 53, ../sass/_mixins.scss */
+main .item img {
+  width: 16rem;
+}
+/* line 57, ../sass/_mixins.scss */
+main .top-item img:hover, main .item img:hover {
+  transform: scale(1.1);
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transition: transform .4s;
+}
+
+/* line 1, ../sass/_base.scss */
+:root {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 7, ../sass/_base.scss */
+body {
+  background-color: #141414;
+  color: #dedede;
+  font-family: "Jost";
+}

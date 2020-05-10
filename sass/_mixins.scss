@@ -1,28 +1,44 @@
-header {
+@mixin header {
     position: fixed;
     top: 0;
     width: 100vw;
+    height: 6rem;
     z-index: 99;
+    background-color: $bg-color;
     display: flex;
     flex: 1;
     flex-flow: row nowrap;
-    justify-content: space-between;  
+    justify-content: space-between; 
 
-    .header-logo, .header-buttons {
+    div {
+        padding: .7rem 1rem;   
+    }
+
+    .header-logo {
         display: flex;
-        align-items: center;
-        
+        align-items: center; 
+
         img {
             margin: .5rem 0 0 1.5rem;
             width: 5rem;
         }
-        div {
-            padding: 0 1rem;
-        }
     }
+
+    .header-buttons {    
+        display: flex;
+        align-items: center; 
+
+        div:hover {
+            cursor: pointer;
+            border-radius: 5%;
+            background-color: $font-color;
+            color: $bg-color;
+        }
+    } 
 }
 
-main {
+
+@mixin main {
     display: flex;
     flex: 1;
     flex-flow: column;
@@ -35,8 +51,9 @@ main {
     .top {
         display: flex;
         flex: 1;
-        flex-flow: row-reverse wrap;
+        flex-flow: row-reverse wrap-reverse;
         justify-content: space-evenly;
+    
     }
 
     .first, .second {
@@ -47,20 +64,23 @@ main {
     }
 
     .top-item img {
-        width: 20rem;
+        min-width: 225px;
+    }
+    .top-item img:hover {
+        transform: rotate(-2deg);
+        transition: transform 0.5s ease;
     }
 
     .item img {
-        width: 16rem;
+        min-width: 250px;
     }
-
-    .top-item img:hover, .item img:hover {
+    .item img:hover {
         transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
         transition: transform .4s;
     }
-
-    .top-text {
-        
-    }
 }
 
+@mixin section-title {
+    margin-top: 2rem;
+    margin-bottom: .7rem;
+}

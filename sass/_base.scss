@@ -10,17 +10,33 @@ body {
     font-family: $font-family;
 }
 
-@media and (scre)
-
-
 header {    
     @include header;
 }
 
-main {    
+main {
     @include main;
-} 
+}
+
+@media only screen and (max-width: $layout-mobile-breakpoint) {
+    main {
+        @include main-mobile;
+    }
+}
+
+@media only screen and (max-width: $layout-tablet-breakpoint) and (min-width: $layout-mobile-breakpoint) {   
+    main {    
+        @include main-tablet;
+    } 
+}
+
+@media only screen and (min-width: $layout-tablet-breakpoint) {
+    main {
+        @include main-desktop;
+    }
+}
 
 .section-title {
     @include section-title;
 }
+

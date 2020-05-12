@@ -1,3 +1,15 @@
+@mixin html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;    
+}
+
+@mixin body {
+    background-color: $bg-color;
+    color: $font-color;
+    font-family: $font-family;
+}
+
 @mixin header {
     position: fixed;
     top: 0;
@@ -48,6 +60,11 @@
 
     height: 80vh;
 
+    .top {
+        display: flex;
+        flex: 1;
+    }
+
     .first, .second {
         display: flex;
         flex: 1;
@@ -57,18 +74,20 @@
 
     .top-item img {
         width: 225px;
-    }
-    .top-item img:hover {
-        transform: rotate(-2deg);
-        transition: transform 0.5s ease;
+
+        &:hover{
+            transform: rotate(-2deg);
+            transition: transform 0.5s ease;
+        }
     }
 
     .item img {
         width: 250px;
-    }
-    .item img:hover {
-        transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-        transition: transform .4s;
+
+        &:hover {
+            transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+            transition: transform .4s;
+        }
     }
 }
 
@@ -79,8 +98,6 @@
 
 @mixin main-desktop {
     .top {
-        display: flex;
-        flex: 1;
         flex-flow: row-reverse wrap-reverse;
         justify-content: space-around;    
     }    
@@ -92,36 +109,24 @@
 
 @mixin main-tablet {
     .top {
-        display: flex;
-        flex: 1;
         flex-flow: row-reverse nowrap;
         justify-content: flex-end;    
-    }
-
-    .top-item:nth-child(-n+2) {
-        display: none;
-    }
-    #top-text:after {
-        content: "3";
     }
 }
 
 @mixin main-mobile {
-    .top {
-        display: flex;
-        flex: 1;
+    .top, .first, .second {
         flex-flow: column-reverse nowrap;
         justify-content: flex-end;    
+        align-items: center;
     }
+}
 
+@mixin main-tablet-mobile {
     .top-item:nth-child(-n+2) {
         display: none;
     }
     #top-text:after {
         content: "3";
-    }
-
-    .first, .second {
-        justify-content: start
     }
 }

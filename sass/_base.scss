@@ -1,13 +1,9 @@
 html {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    @include html;
 }
 
 body {
-    background-color: $bg-color;
-    color: $font-color;
-    font-family: $font-family;
+    @include body;
 }
 
 header {    
@@ -18,15 +14,21 @@ main {
     @include main;
 }
 
+.section-title {
+    @include section-title;
+}
+
 @media only screen and (max-width: $layout-mobile-breakpoint) {
     main {
         @include main-mobile;
+        @include main-tablet-mobile;
     }
 }
 
 @media only screen and (max-width: $layout-tablet-breakpoint) and (min-width: $layout-mobile-breakpoint) {   
     main {    
         @include main-tablet;
+        @include main-tablet-mobile;
     } 
 }
 
@@ -35,8 +37,3 @@ main {
         @include main-desktop;
     }
 }
-
-.section-title {
-    @include section-title;
-}
-

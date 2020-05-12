@@ -6,14 +6,14 @@ html {
   padding: 0;
 }
 
-/* line 7, ../sass/_base.scss */
+/* line 5, ../sass/_base.scss */
 body {
   background-color: #141414;
   color: #dedede;
   font-family: "Jost";
 }
 
-/* line 13, ../sass/_base.scss */
+/* line 9, ../sass/_base.scss */
 header {
   position: fixed;
   top: 0;
@@ -26,26 +26,26 @@ header {
   flex-flow: row nowrap;
   justify-content: space-between;
 }
-/* line 13, ../sass/_mixins.scss */
+/* line 25, ../sass/_mixins.scss */
 header div {
   padding: .7rem 1rem;
 }
-/* line 17, ../sass/_mixins.scss */
+/* line 29, ../sass/_mixins.scss */
 header .header-logo {
   display: flex;
   align-items: center;
 }
-/* line 21, ../sass/_mixins.scss */
+/* line 33, ../sass/_mixins.scss */
 header .header-logo img {
   margin: .5rem 0 0 1.5rem;
   width: 5rem;
 }
-/* line 27, ../sass/_mixins.scss */
+/* line 39, ../sass/_mixins.scss */
 header .header-buttons {
   display: flex;
   align-items: center;
 }
-/* line 31, ../sass/_mixins.scss */
+/* line 43, ../sass/_mixins.scss */
 header .header-buttons div:hover {
   cursor: pointer;
   border-radius: 5%;
@@ -53,7 +53,7 @@ header .header-buttons div:hover {
   color: #141414;
 }
 
-/* line 17, ../sass/_base.scss */
+/* line 13, ../sass/_base.scss */
 main {
   display: flex;
   flex: 1;
@@ -62,86 +62,83 @@ main {
   top: 5.5rem;
   height: 80vh;
 }
-/* line 51, ../sass/_mixins.scss */
+/* line 63, ../sass/_mixins.scss */
+main .top {
+  display: flex;
+  flex: 1;
+}
+/* line 68, ../sass/_mixins.scss */
 main .first, main .second {
   display: flex;
   flex: 1;
   flex-flow: row wrap;
   justify-content: space-evenly;
 }
-/* line 58, ../sass/_mixins.scss */
+/* line 75, ../sass/_mixins.scss */
 main .top-item img {
   width: 225px;
 }
-/* line 61, ../sass/_mixins.scss */
+/* line 78, ../sass/_mixins.scss */
 main .top-item img:hover {
   transform: rotate(-2deg);
   transition: transform 0.5s ease;
 }
-/* line 66, ../sass/_mixins.scss */
+/* line 84, ../sass/_mixins.scss */
 main .item img {
   width: 250px;
 }
-/* line 69, ../sass/_mixins.scss */
+/* line 87, ../sass/_mixins.scss */
 main .item img:hover {
   transform: scale(1.1);
   /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   transition: transform .4s;
 }
 
+/* line 17, ../sass/_base.scss */
+.section-title {
+  margin-top: 2rem;
+  margin-bottom: .7rem;
+}
+
 @media only screen and (max-width: 414px) {
-  /* line 110, ../sass/_mixins.scss */
-  main .top {
-    display: flex;
-    flex: 1;
+  /* line 118, ../sass/_mixins.scss */
+  main .top, main .first, main .second {
     flex-flow: column-reverse nowrap;
     justify-content: flex-end;
+    align-items: center;
   }
-  /* line 117, ../sass/_mixins.scss */
+  /* line 126, ../sass/_mixins.scss */
   main .top-item:nth-child(-n+2) {
     display: none;
   }
-  /* line 120, ../sass/_mixins.scss */
+  /* line 129, ../sass/_mixins.scss */
   main #top-text:after {
     content: "3";
   }
-  /* line 124, ../sass/_mixins.scss */
-  main .first, main .second {
-    justify-content: start;
-  }
 }
 @media only screen and (max-width: 1280px) and (min-width: 414px) {
-  /* line 94, ../sass/_mixins.scss */
+  /* line 111, ../sass/_mixins.scss */
   main .top {
-    display: flex;
-    flex: 1;
     flex-flow: row-reverse nowrap;
     justify-content: flex-end;
   }
-  /* line 101, ../sass/_mixins.scss */
+  /* line 126, ../sass/_mixins.scss */
   main .top-item:nth-child(-n+2) {
     display: none;
   }
-  /* line 104, ../sass/_mixins.scss */
+  /* line 129, ../sass/_mixins.scss */
   main #top-text:after {
     content: "3";
   }
 }
 @media only screen and (min-width: 1280px) {
-  /* line 81, ../sass/_mixins.scss */
+  /* line 100, ../sass/_mixins.scss */
   main .top {
-    display: flex;
-    flex: 1;
     flex-flow: row-reverse wrap-reverse;
     justify-content: space-around;
   }
-  /* line 88, ../sass/_mixins.scss */
+  /* line 105, ../sass/_mixins.scss */
   main #top-text:after {
     content: "5";
   }
-}
-/* line 39, ../sass/_base.scss */
-.section-title {
-  margin-top: 2rem;
-  margin-bottom: .7rem;
 }
